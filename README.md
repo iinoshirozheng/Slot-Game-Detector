@@ -1,94 +1,170 @@
-# Feature_Detection
-
-æ­¤å°ˆæ¡ˆç‚ºç‚ºäº†é©—è­‰ç¶²è·¯ä¸Šçš„ slot game æ©Ÿç‡æ˜¯å¦æ­£ç¢ºæ‰€åšçš„ç¨‹å¼
+# ¦Û°Ê¿ëÃÑµP­±µ{¦¡¨Ï¥Î½d¥» 
 
 ---
+## ±M®×¤¶²Ğ
 
-## ç›¸é—œè¨­å®š  
+&emsp;&emsp;¨Ï¥Î¦Û°Ê¿ëÃÑ©ÔÅQ¾÷°»´úµ{¦¡¥i¥H§Ö³t¦Ó¦³®Äªº§PÂ_¥X©ÔÅQ¾÷ªºµP­±¡A¬Ù¥h¤â°Ê§PÂ_ªº®É¶¡¡AÁ×§K¤H¬°¿ù»~¡C¥i¥HÀ³¥Î¦b³Õ«Ù²£·~¡B¹CÀ¸¾÷¥xµ¥¤è­±¡A¤j´T´£°ª§@·~®Ä²v»P¥¿½T©Ê¡C¸Óµ{¦¡¯à°÷§Y®ÉÃÑ§O¥X©ÔÅQ¾÷¤¤ªº¦UºØ¹Ï®×¤Î¨ä±Æ¦C¡A©¹«á¥i¥H¶i¤@¨B³z¹L¼Æ¾Ú¤ÀªR¡A´£¨Ñ§ó¦h¦³¥Îªº¸ê°T¡A¦p RTP¡BCV ­Èµ¥µ¥¡AÅı¨Ï¥ÎªÌ§ó®e©ö¤ÀªR¹CÀ¸¾÷¥xªº³]©w¾÷²v¡C¦¹¤è®×±Mªù³]­p¬°¾A¥Î©ó¦UºØ¤£¦P«¬¸¹ªº©ÔÅQ¾÷¡A¶i¤@¨B´£°ª¨ä¹ê¥Î©Ê¡A¥H¤U¬°°»´úªº®ÄªGµe­± :  
 
-- opencv 4.6.0  
+![Demo Detector Gif](./src/Detector.gif)  
 
-> MacOS M1 Silicon çš„å®‰è£æ–¹å¼ï¼š  
->
-> 1. å®‰è£ [Homebrew](https://brew.sh/)ï¼š  
->
-> ```
-> /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-> ```  
->
-> 2. å®‰è£ [CMake](https://cmake.org/)ï¼š  
->
-> ```  
-> brew install cmake  
-> ```  
->
-> 3. å»ºç«‹è³‡æ–™å¤¾åˆ°ä½ çš„å„²å­˜ä½ç½®ï¼š
->
-> ```  
-> mkdir OpenCV && cd OpenCV
-> ```  
->
-> 4. ä¸‹ git æŒ‡ä»¤è¤‡è£½ [OpenCV](https://opencv.org/)ï¼š
->
-> ```  
-> git clone https://github.com/opencv/opencv.git
-> ```  
->
-> 5. å»ºç«‹ build è³‡æ–™å¤¾ï¼š  
->
-> ```  
-> mkdir build && cd build
-> ```  
->
-> 6. cmake è¨­å®šç·¨è­¯
->
-> ```  
-> cmake ../opencv/.
-> ```  
->
-> 7. cmake è¨­å®šç·¨è­¯åƒæ•¸ï¼š  
->
-> ```  
-> arch -arm64 cmake ../opencv/ -DWITH_QT=OFF -DWITH_OPENGL=OFF -DFORCE_VTK=OFF -DWITH_TBB=OFF -DWITH_GDAL=OFF -DWITH_XINE=OFF -DBUILD_EXAMPLES=OFF -DBUILD_ZLIB=OFF -DBUILD_TESTS=OFF .`  
-> ```  
->
-> 8. è¨­å®š Mac ç·¨è­¯çš„ç·šç¨‹æ•¸ (éœ€è¦åˆ° zprofile ä¸­å¢åŠ )ï¼š
->
-> ```
-> vim ~./zprofile
-> ```
-> >
-> > ```
-> > # è¨­å®š CPU ç·šç¨‹æ•¸
-> > export CPUS=$(sysctl -n hw.physicalcpu)  
-> > ```
-> >
-> ```  
-> source ~/.zprofile
-> ```
->
-> 9. ç·¨è­¯ opencvï¼š  
->
-> ```  
-> arch -arm64 sudo make -j $CPUS
-> ```  
->
-> 10. æœ€å¾Œåœ¨ make install ä¸€ä¸‹ï¼š
->
-> ```  
-> arch -arm64 sudo make install  
-> ```  
->
-> - PS. é€™æ˜¯æˆ‘é›»è…¦æˆåŠŸçš„æ–¹å¼ï¼Œæ¯å°é›»è…¦å¯èƒ½ç•¥æœ‰å·®ç•°ï¼Œæ­¤æ–¹æ³•æœ‰æ•ˆä¸ä»£è¡¨æ‰€æœ‰è£ç½®éƒ½æœ‰æ•ˆã€‚  
->
-> 11. è¨­å®šç·¨è­¯å¥½çš„ opencv ç’°å¢ƒè·¯å¾‘  
-> 12. é †ä¾¿è¨˜ä¸€ä¸‹æœ€å¾Œé€™å€‹æŒ‡ä»¤å¯ä»¥æ•´ç† homebrew package
-> ```
-> brew update && brew upgrade && brew cleanup; brew doctor
-> ```
+### --> ¤U¸ü¨Ã¨Ï¥Î¡AÂIÀ»¦¹³Bªº [½d¨Ò](https://gitlab.uj.com.tw/ray1105/slot_detector_demo/-/archive/main/slot_detector_demo-main.zip?path=Demo) ÀÉ®×¡C
 
-ä½¿ç”¨èªè¨€
+---
+## ÀÉ®×Á`Äı  
+¦¹³B·|Á¿¸Ñ¨C­ÓÀÉ®×ªº§@¥Î¥H¤Î¨C­ÓÀÉ®×ªº¥Î³~¡A¨Ã¥B¦b«á­±ªº [¨Ï¥Î»¡©ú](#¨Ï¥Î»¡©ú) ¤¤¸Ô²Ó»¡©ú¦p¦ó¾Ş§@»P¨Ï¥Î¡C
 
-- C/C++  
+- ¥H¤U¾ğª¬¹Ï¬°½d¨ÒÀÉ®×ªº¸ê®Æ§¨µ²ºc
+
+``` Terminal
+Demo
+¢x   demo.mp4                                                  (½d¨Ò¼v¤ù)
+¢x   Select.bat                                                (®Ø¿ï¾¹ °õ¦æÀÉ)
+¢x
+¢u¢w¢w¢wbin [µ{¦¡ÀÉ®×]
+¢x   ¢x   Detector.exe
+¢x   ¢x   Selector.exe
+¢x   ¢x   *.dll
+¢x   ¢x
+¢x   ¢|¢w¢w¢wtessdata [¤å¦r¿ëÃÑ¼Ò«¬¸ê®Æ§¨]
+|           *OCR¤å¦r¿ëÃÑ¼Ò«¬ÀÉ®×
+¢x
+¢|¢w¢w¢wDatasets [¥Í¦¨¼Æ¾Ú¤Î¸ê®Æ§¨]
+    |
+    ¢|¢w¢w¢wDataset_XXX [¥Í¦¨¼Æ¾Ú¶°]
+        ¢x   Detect.bat                                        (°»´ú°õ¦æÀÉ)
+        ¢x   save_selected_image.png                           (®Ø¿ï§¹ªºÂsÄı¹Ï¤ù)
+        ¢x   settings.json                                     (°»´úµ{¦¡³]©w°Ñ¼Æ¡A¨Ï¥Î¤§«e»İ­×§ï°Ñ¼Æ)
+        ¢x
+        ¢u¢w¢w¢wLabels [¼ĞÅÒ¸ê®Æ§¨]
+        ¢x       *Labels.png                                   (©Ò¦³°»´ú¼ĞÅÒ¹Ï¤ù)
+        ¢x
+        ¢u¢w¢w¢wOutput [¿ëÃÑ¸ê®Æ¿é¥XÀÉ®×]
+        ¢x   ¢x   Convert-(Time)-Demo.csv     (¼ÒªOÂà´« ¿é¥XÀÉ®×)
+        ¢x   ¢x   Convert.bat                                   (¼ÒªOÂà´« °õ¦æÀÉ)
+        ¢x   ¢x   Template.csv                                  (¿é¥X CSV ¼ÒªO)
+        ¢x   ¢x
+        ¢x   ¢|¢w¢w¢wDate [¤ÀÃş¸ê®Æ§¨]
+        |       (Time) Demo.csv                               (®Ú¾Ú®É¶¡¤ÀÃşªº¿é¥X CSV ÀÉ®×)
+        ¢x
+        ¢|¢w¢w¢wVideos [¼v¤ù¸ê®Æ§¨]
+                Demo.mp4                                      (demo ¼v¤ù)
+```
+
+- demo.mp4¡G¦¹¬°½d¨Ò¼v¤ùÀÉ®×¡A¨Ñ¨Ï¥ÎªÌ°Ñ¦Ò¡C¥i¥H³z¹L¦¹¼v¤ù¤F¸Ñµ{¦¡¹B§@¤è¦¡¡C  
   
-## åƒè€ƒè³‡æ–™èˆ‡é€£çµ
+- Select.bat¡G®Ø¿ï¾¹ªº°õ¦æÀÉ¡A¥i¥H¤â°Ê¿ï¾Ü¼v¤ù¤¤­n¿ëÃÑªº°Ï°ì¡AÅıµ{¦¡¥u³B²z«ü©w®Ø¿ïªº½d³ò(¥Ñ¦¹°õ¦æ)¡C
+- bin¥Ø¿ı¡Gµ{¦¡ÀÉ®×©Ò¦b¸ê®Æ§¨¡A¥]§t¥H¤UÀÉ®×©M¸ê®Æ§¨¡G
+  - Detector.exe¡G°»´úµ{¦¡ªºµ{¦¡ÀÉ¡A¥i¥Î¨Ó¹ï¿ï¾Üªº°Ï°ì¶i¦æµP­±°»´ú¡A¨Ã¦Aµ²§ô®É¶×¥XCSVÀÉ®×¡C
+  - Selector.exe¡G®Ø¿ï¾¹ªºµ{¦¡ÀÉ¡A¥i¥Î¨Ó¤â°Ê¿ï¾Ü¼v¤ù¤¤­n¿ëÃÑªº°Ï°ì¡C
+  - *.dll¡Gµ{¦¡¹B¦æ©Ò»İªº°ÊºA³sµ²®wÀÉ®×¡C
+  - tessdata¥Ø¿ı¡G¤å¦r¿ëÃÑ¼Ò«¬¸ê®Æ§¨¡A¥]§tOCR¤å¦r¿ëÃÑ¼Ò«¬ÀÉ®×¡C
+### ¥H¤UÀÉ®×¬°°õ¦æ "Select.bat" ¤§«á¦Û°Ê²£¥Í
+- Datasets¥Ø¿ı¡G¥Í¦¨¼Æ¾Ú¤Î¸ê®Æ§¨©Ò¦b¸ê®Æ§¨¡A¥]§t¥H¤UÀÉ®×©M¸ê®Æ§¨¡G  
+
+  - Dataset_XXX¥Ø¿ı¡G®Ú¾Ú¼v¤ù¥Í¦¨ªº¼Æ¾Ú¶°¡AXXX ¬°¦Û°Ê½s¸¹ 1 ~ N ¡C
+  - Detect.bat¡G°»´úµ{¦¡ªº°õ¦æÀÉ (¥Ñ¦¹°õ¦æ)¡C
+  - save_selected_image.png¡G®Ø¿ï§¹ªºÂsÄı¹Ï¤ù¡C
+  - settings.json¡G°»´úµ{¦¡³]©w°Ñ¼Æ *(¨Ï¥Î¤§«e»İ­×§ï°Ñ¼Æ)*¡C  
+- Labels¥Ø¿ı¡G¼ĞÅÒÀÉ®×©Ò¦b¸ê®Æ§¨¡A¥]§t¥H¤UÀÉ®×¡G
+  - *Labels.png¡G©Ò¦³°»´ú¼ĞÅÒ¹Ï¤ù *(»İ­n¥[¤J¼ĞÅÒ¹Ï¤ù)*¡C
+- Output¥Ø¿ı¡G¿ëÃÑ¸ê®Æ¿é¥XÀÉ®×©Ò¦b¸ê®Æ§¨¡A¥]§t¥H¤UÀÉ®×©M¸ê®Æ§¨¡G  
+
+  - Template.csv¡G·Q­n¿é¥Xªº CSV ¼ÒªO¼Ë¦¡¡C
+  - Convert-(Time)-Demo.csv : ¼ÒªOÂà´«©Ò¿é¥XªºÀÉ®×¡C
+  - Convert.bat : ¼ÒªOÂà´«ªº°õ¦æÀÉ®×¡C
+  - Date¥Ø¿ı ( YYYY-MM-DD )¡G®Ú¾Ú¤é´Á¤ÀÃşªº¸ê®Æ§¨¡C  
+    - Time ( hh-mm-ss ) Demo.csv¡G®Ú¾Ú®É¶¡¤ÀÃşªº¿é¥X CSV ÀÉ®×¡C
+- Videos¥Ø¿ı¡G¼v¤ùÀÉ®×©Ò¦b¸ê®Æ§¨¡A¥]§t¥H¤UÀÉ®×¡G  
+
+  - Demo.mp4¡Gdemo ¼v¤ù¡A®Ø¿ï§¹«á·|¦Ò³Q¤@¤À¨ì¦¹¸ê®Æ§¨¡A¤]¥i©ñ¤J¨ä¥L·Q°»´úªº¼v¤ù¶i¥h¡C
+
+---
+## ¨Ï¥Î»¡©ú
+### Select.bat
+1. ÂùÀ» `Select.bat` ÀÉ®×¡C
+2. ÂùÀ»«á·|¸õ¥X¿é¤Jµøµ¡¡A±N§A·Q­n¿ëÃÑªº¼v¤ù©ì¦²¦Ü¨ä¤¤¡A¥i¥H³]©w²Ä¤G­Ó°Ñ¼Æ(¼½©ñ©µ¿ğ¦h¤Ö²@¬í¡A¥Î¨Ó¸û·Ç½Tªº¿ï¾Ü§A­n®Ø¿ï­ş¤@ºÕªºµe­±¡A¹w³]­È¬°©µ¿ğ100²@¬í¡A¤£¿é¤J²Ä¤G­Ó­Èªº®É­Ô·|¥H©µ¿ğ100²@¬í°õ¦æ¦¹µ{¦¡)¡C  
+   ¨Ò¦p : `Input the Video Path : demo.mp4(§Aªº¸ô®|) 100(©µ¿ğ®É¶¡ ²@¬í)` ¡A¿é¤J§¹¦¨«á«ö `Enter` Áä¶}©l®Ø¿ïµ{¦¡¡C  
+   
+   ![Demo Detector Gif](./src/input_video.gif)  
+
+3. ¦¹®É·|¶i¤J©µ¿ğ100²@¬íªº¿ï¾Üµe­±¤¶­±¡Aµ{¦¡¼ĞÃDÄæ·|Åã¥Ü´£¥Ü¦r¼Ë `Pressed "Enter" to choise whitch frame you want to select`¡A¦¹®É : 
+   - «ö¦í `Esc` Áä : °h¥Xµ{¦¡ (¤£°õ¦æ¥ô¦ó°Ê§@)¡C
+   - «ö¤U `Enter` Áä : ¿ï©w§A­nªºµe­±¡C
+4. ·í¿ï¾Ü§¹µe­± («ö¤U `Enter` Áä¤§«á)¡A¼ĞÃDÄæ·|Åã¥Ü´£¥Ü¦r¼Ë `Pressed any key to continue, or pressed "R" to RE-SELECT frame`¡A¥X²{¦¹´£¥Ü®É¥Nªí§A¤w¸g¿ï©w·Q­nªºµe­±¡A¦¹®É : 
+   - «ö¦í `Esc` Áä : ª½±µ°h¥X¤£°õ¦æ¥ô¦ó°Ê§@¡C
+   - «ö¤U `R` Áä : ­«·s¿ï¾Ü·Q­nªºµe­±¡C
+   - «ö¤U¨ä¥L«öÁä : Ä~Äò±µ¤U¨Óªºµ{¦¡¡C
+   
+   ![Demo Detector Gif](./src/choose_video.gif) 
+
+5. ¿ï¾Ü§¹§A·Q®Ø¿ïªºµe­±«á«K·|¶i¤J®Ø¿ï¥Dµ{¦¡¡A¨ÃÂIÀ»·Æ¹«¥ªÁä®Ø¿ï§A·Q­n¿ëÃÑªº°Ï°ì (®Ø¿ï¶¶§Ç¥²¶·«ö·Ó±ø½ü±aªíªº¶¶§Ç®Ø¿ï¡A¤£¥i¥H¸õµÛ¿ï)¡A¦¹®É : 
+   - «ö¦í `Esc` Áä : °h¥Xµ{¦¡ (¤£°õ¦æ¥ô¦ó°Ê§@)¡C
+   - ÂIÀ» <font color=#green>`¥ª`</font> Áä·Æ¹« : ®Ø¿ï·Q­nªº½d³ò¡C
+   - «ö¤U `+` Áä : ¼W¥[®Ø¿ï®Øªº½u±ø²Ê«×¡C
+   - «ö¤U `-` Áä : ´î¤Ö®Ø¿ï®Øªº½u±ø²Ê«×¡C 
+   - «ö¤U <font color=yellow>`M`</font> Áä : ®Ø¿ïª÷¿úªº½d³ò (¥u¯à®Ø¿ï¤@²Õª÷¿ú¡A¥B¤@©w­n®Ø¿ï)¡C
+   - «ö¤U <font color=#FF00FF>`P`</font> Áä : ®Ø¿ï¯S®í¼Ò¦¡ (MODE) ªº°Ï°ì¡A¥Î¨ÓÀË´ú¬O§_¶i¤J¯S§Oªº¼Ò¦¡ (¥u¯à®Ø¿ï¤@²Õ¯S®í¼Ò¦¡¡A¥B¤@©w­n®Ø¿ï)¡C
+   - «ö¤U `Enter` Áä : ¿ï©w¦¹¦¸®Ø¿ï½d³ò¡C
+   - «ö¤U `S` Áä : Àx¦sµ²ªG¨Ãµ²§ô®Ø¿ïµ{¦¡¡C
+   
+   ![Demo Detector Gif](./src/select_box.png) 
+
+6. «ö¤U `S` ¤§«á±N·|¦b `Demo` ¸ê®Æ§¨¤U¥Í¦¨ `Datasets` ¸ê®Æ§¨ (¦pªG¤w¸g¦s¦b«h¤£·|¥Í¦¨¡A¨S¦³¦¹¸ê®Æ§¨¤~·|¥Í¦¨)¡A¥H¤Î `Dataset_XXX` ªº¤l¸ê®Æ§¨¡A¥´¶}¥Í¦¨ªº `Dataset_XXX` ¸ê®Æ§¨¡A³o«K¬O¦¹µ{¦¡À°§A¥Í¦¨ªº³]©wÀÉ®×¡A¤U­±·|¦b [Detect.bat](#detectbat) ªº¦a¤è»¡©ú¦p¦ó³]©w»P¨Ï¥Î¦¹µ{¦¡¡A¨Ã¦¨¥\Åı¥¦¹B¦æ°_¨Ó¡C
+   
+   ![Demo Detector Gif](./src/create_dataset.gif)  
+
+---
+### Detect.bat
+&emsp;&emsp;­n¦¨¥\¹B¦æ `Detect.bat` »İ­n±N¤ñ¹ï¹Ï¤ù©ñ¤J `Labels` ¸ê®Æ§¨¤¤¡A³o¨Ç·Ó¤ù¬O­n¥Î¨Ó»P­è­è®Ø¿ïªº°Ï°ì¶i¦æ¯S¼x¤ñ¹ï¡A¦pªG¬Û¦ü´N·|§PÂ_¬°³o¤@±i·Ó¤ù¡A¸Ô²Óºâªk¥i¥H°Ñ¦Ò [ORB](https://docs.opencv.org/3.4/d1/d89/tutorial_py_orb.html) ºâªk¡A¦¹¤èªk¬°¥Ø«e¶}·½¤è®× (§K¶O¶µ¥Ø) ¤¤®ÄªG¸û¨Î¥B³t«×¸û§Öªº¤è®×¡A¥B¤£»İ­n¨Ï¥Î¨ì¤j¶q GPU ¹Bºâ¡A¸Ô²Ó³]©w¨BÆJ¦p¤U :  
+
+1. ¥´¶} `Labels` ¸ê®Æ§¨¡A±NÂ^¨ú¦nªº¯S¼x¹Ï¤ù©ñ¤J¦¹¸ê®Æ§¨¤¤ (¥i¥H°Ñ¦Ò `Dataset_1/Labels` ¸ê®Æ§¨) ¡A¥H¤U¦³´XÂI©ñ¤J°»´ú¹Ï¤ù»İ­n¯S§Oª`·Nªº¦a¤è :
+   - ¹Ï¤ù¸ÑªR«×¤£¯à¤Ó§C (¥i¥H±N¼v¤ù¥ı¶}±Ò©ñ¤j¨ì¥ş¿Ã¹õ¦bÂ^¨ú¹Ï¤ù¡A®ÄªG·|¸û·Ç½T)¡C
+   - ¯S¼x¹Ï¤ù¤£»İ­n¤Ó¦h­I´º¡AºÉ¶q¤ñ­n°»´úªº¹Ï¤ù½d³ò¤p¡A¥u¯d¹Ï¤ùªºÃä½t½ü¹ø§Y¥i¡C
+   - ±N¹Ï¤ù©R¦W¬°³Ì«á¿é¥X·Q­nªº¦WºÙ (¼ĞÅÒ¦W¤l¬°¤°»ò¡A³Ì«á¿é¥X´N·|¥s¤°»ò)¡C
+   - ¯S®í¼Ò¦¡½Ğ¦b§A¨úªº¦W¤l«e­±¥[¤W `MODE_` ¦r¼Ë¡A¦p `MODE_FreeSpin` ¡A³o¼Ëµ{¦¡´N·|§PÂ_¦¨ MODE ¼Ò¦¡¡A«á­±·Q­n¨ú¤°»ò¦W¤l³£¥i¥H¡C
+   - ¦pªG¦³§PÂ_¤£¥X¨Óªº¼v¹³¡A¥i¥H³æ¿WÂ^¨ú¨º±i¨Ã©R¦W¦p : `MODE_XXX_FREE` (MODE¼Ò¦¡©R¦Wªk)¡A¨ä¥L¦pªG¦³«K¬O¤£¥X¨Óªº¥i¥H©R¦W¬° `§A­n¨úªº¦W¤l_XXX`¡A¿é¥X®Éµ{¦¡·|±N©³½u«á­±¬Ù²¤¡A«O¯d²Ä¤@­Ó¦r¼Ë (MODE ¼Ò¦¡«h·|«O¯d³Ì«á¤@­Ó)¡C
+   
+   ![Demo Detector Gif](./src/labels.png)  
+
+2. ³]©w `settings.json` ÀÉ®×¡A¦³¥H¤U´X­Ó°Ñ¼Æ («e¨â¶µ¬°»İ­n½Õ¾ã¶µ¡A¨ä¥L¥i¥H¤£°Ê) : 
+   - `add_label_seq` : (¥²¶·³]©w) ¨C±ø½ü±aªí¦³´X­Ó¡A¦p½d¨Ò¤¤½ü±aªí¦³¤­±ø¡A°²¦p¨C¤@±ø½ü±a¦³¤T­Ó«h¥i¥H±N¨äªí¥Ü¬° : `"add_label_seq" : [3,3,3,3,3]`¡A¥H¦¹Ãş±À¡Aª`·N¦¹¿ï¶µ¥²¶·»P¥ş³¡¬Û¥[Á`©M¬Û¦P¡C  
+   
+   - `add_save_addition` : ¦p³]©w 1 ¨C±ø½ü¥Nªí·|¦h¤@­Ó§PÂ_¡A¦Ó³]©w 2 ¨C±ø½ü¥Nªí«h·|¦h¨â­Ó§PÂ_ (¹w³]¬°2)¡C  
+   - `continue_detect_frame` : ³sÄò´XºÕ¹Ï¤ù±N¨äµø¬°¦³®Ä°»´úºÕ¡C
+   - `Continue mode frame` : ³sÄò´XºÕ¹Ï¤ù±N¨äµø¬°¦³®Ä¼Ò¦¡ºÕ¡C
+   - `Continue money frame` : ³sÄò´XºÕ¹Ï¤ù±N¨äµø¬°¦³®Äª÷¿úºÕ¡C
+   - `delay_frame` : ¼v¤ù©µ¿ğ (²@¬í)¡A¤£¥i¥H³]¬° 0 ·|¥d¦í¤£°Ê¡C
+   - `detect_video` : ©Ò­n°»´úªº¼v¤ù¡C
+   - `detector_threshold` : °»´ú±Ó·P«×(»Ö­È)¡C
+   - `mode_labels_box` : ¼Ò¦¡°»´ú®Ø¡C
+   - `money_labels_box` : ª÷¿ú°»´ú®Ø¡C
+   - `select_labels_box` : ¥D­n°»´ú®Ø¡C  
+  
+3. ·í¥H¤W³£³]©w§¹¦¨«á¡AÂùÀ» `Detect.bat` ÀÉ®×¡A«K¥i¥H¶}©l¿ëÃÑ¡A°»´ú§¹¦¨ªº¿é¥X¸ê®Æ·|Àx¦s¦b `Datasets/Dataset_XXX/Output/` ¸ê®Æ§¨¤¤¡A¥i¥H¦b¨ì¸Ì­±¬d¬İ¸Ô²Ó¸ê®Æ : 
+   
+   ![Demo Detector Gif](./src/output.gif)  
+
+   ¥H¤W¸ê®Æ¬Ò¬°¤@¦æ¤@¦æªºÀx¦s®æ¦¡¡A¦pªG·Q­n¿é¥X¦¨§A·Q­nªº¼Ë¦¡¡A«h¥i¥H°Ñ¦Ò¥H¤U³¡¤À [TransformCSV.bat](#transformcsvbat) ªº»¡©ú¤åÀÉ¡C
+   
+---
+### TransformCSV.bat
+&emsp;&emsp;¿é¥X®É©ÒÀx¦sªº¸ê®Æ¦p¤U¹Ï©Ò¥Ü¡A¥Ñ©óÀx¦sªº®É­Ô¨Ã¤£ª¾¹D¨Ï¥ÎªÌ©Ò·QÀx¦sªº®æ¦¡¡A©Ò¥H³£¬O¥H¨C²Õ¤@­Ó row ªº¤è¦¡Àx¦s¡A¦ı¬O¦Ò¶q¨ì­pµeªº¨¯­W¥H¤Î¤£®e©ö¥h®i¥Üµ²ªG¡A©Ò¥H³oÃä§ÚÅıµ{¦¡¦Û°Ê¤É¦¨¤@­Óªì©l¼ÒªO¡A³z¹L­×§ï³o­Óªì©l¼ÒªOªº¼Ë¦¡¨Ó§ï¦¨¦Û¤v·Q­nªº¼Ë¦¡¡C  
+
+![Demo Detector Gif](./src/convert.png)  
+
+¥H¤U±N¤À§O»¡©ú¨Ï¥Î `Convert.bat` ªº¸Ô²Ó¨BÆJ : 
+
+1. ¶i¤J `Datasets/Dataset_XXX/Output` ¸ê®Æ§¨¡A¶}±Ò `Template.csv` ÀÉ®×¡A¶}±Ò«á±N¨ä­×§ï¬°§A·Q­nªº¼Ë¦¡¡AÀx¦s¨ÃÃö³¬¡C  
+
+2. ­×§ï§¹«áÂùÀ» `Convert.bat` ÀÉ®×¡A·|¸õ¥X¤@­Ó¹ï¸Ü®Ø¡A±N§A·Q­nÂà´«ªºÀÉ®×©ì¦²¦Ü¹ï¸Ü®Ø¤¤¨Ã¥B«ö¤U `Enter` Áä°õ¦æ¡A¬İ¨ì " finished! " ¦r¼Ë¥Nªí­×§ï¦¨¥\¡C
+3. ¦^¨ì `Datasets/Dataset_XXX/Output` ¸ê®Æ§¨¡A¥i¥H¬İ¨ì·s¼W¤F¤@­Ó¶}ÀY¬° `Convert-` ªºÀÉ®×¡A¦¹ÀÉ®×¬°³Ì²×ªº¿é¥XÀÉ®×¡A¹ê»Ú¾D§@¦p¤U : 
+   
+   ![Demo Detector Gif](./src/convert.gif)  
+
+   
+
+---
+## ª`·N¨Æ¶µ
+1. ¦b¿ı¼v®É¡A¦pªG¦³°T®§Äæ©Î¬O¹ï¸Ü®Ø (¥ô¦ó¥i¯à·|¼vÅT§PÂ_µ²ªGªºªF¦è)¡A½Ğ§â¥¦Ãö±¼¥H§K¤zÂZ§PÂ_¡C
+2. ®Ø¿ïªº®É«á¡A¼Ğ°Oªº½d³òºÉ¶q¤ñ­ì¹Ï½d³ò¤j¤@ÂI¡A¶W¥X¥h¨SÃö«Y¡A¤£»İ­n®Ø¿ï­è­è¦n¡C
+3. §P§Oªº `Labels` ¹Ï¤ù¸ÑªR«×­n°ª¡AÂ^¨úªº·Ó¤ùºÉ¶q¤p©ó­n§PÂ_ªº·Ó¤ù¡A¥i¥H§â¦h¾l¤£¬O¯S¼xªº­I´ºµô¥h±¼¡C
